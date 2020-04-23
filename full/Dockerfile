@@ -259,6 +259,7 @@ RUN cp /home/gitpod/.profile /home/gitpod/.profile_orig && \
     && .cargo/bin/rustup default 1.42.0 \
     # Save image size by removing now-redudant stable toolchain
     && .cargo/bin/rustup toolchain uninstall stable \
+    && .cargo/bin/rustup completions bash cargo >> ~/.bashrc \
     && .cargo/bin/rustup component add \
         rls \
         rust-analysis \
